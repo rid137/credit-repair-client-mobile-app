@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Pressable, ImageBackground } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
@@ -14,6 +14,8 @@ function TabBarIcon(props: {
 }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
+// const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
+
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -26,6 +28,8 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
+      {/* <ImageBackground source={image} resizeMode="cover" style={{}}> */}
+        
       <Tabs.Screen
         name="index"
         options={{
@@ -54,6 +58,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
+    {/* </ImageBackground> */}
+
     </Tabs>
   );
 }
